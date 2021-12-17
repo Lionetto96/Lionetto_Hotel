@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Rex Hotel/prenotaCamere</title>
+    <link href="Hotel.css" rel="stylesheet" />
+    <link href="../../lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="Script.js"></script>
+</head>
+<body onload="checkLoggedUser(); showBill();">
+    <header>
+        <img id="logo" src="RexLogo.jpg" width="100" height="100" />
+        <h1> Hotel Rex Lifestyle Napoli </h1>
+        <br /> <br />
+        <img src="imageHotel.jpg" />
+
+    </header>
+
+
+
+    <nav>
+        <ul>
+            <li><a href="Homepage.html">Homepage</a> </li>
+            <li><a href="Contatti.html">contatti</a> </li>
+            <li> <a href="Camere.html">le  nostre camere</a></li>
+            <li><button id="logOutButton" onclick="logOut()">Esci</button></li>
+        </ul>
+
+
+    </nav>
+
+    <br /> <br />
+    <p id="bill"></p>
+    <form class="Prenota">
+        <label>Nome</label>
+        <input type="text" placeholder="Inserisci il tuo nome" required />
+
+        <label>Cognome</label>
+        <input type="text" placeholder="Inserisci il tuo cognome" required />
+
+        <label>Data check in</label>
+        <input id="checkInDate" class="inputUtente" required type="date" name="checkin" min="" />
+
+        <label>Data check out</label>
+        <input type="date" required />
+
+
+
+        <label>E-mail</label>
+        <input type="email" placeholder="Inserisci email" required />
+
+
+        <label>Numero di telefono</label>
+        <input type="tel" placeholder="Inserisci numero di telefono" required />
+
+
+        <input type="submit" value="invia" href="Homepage.html" />
+        <input class="button" type="reset" value="Reset" />
+    </form>
+
+    <br /> <br />
+    <button id="openLoginForm" onclick="login()">Accedi</button>
+    <div id="myForm">
+        <form onsubmit="save()">
+            <h1> Login</h1>
+
+            <label for="username"> <b> username</b></label>
+            <input id="usernameInput" type="text" placeholder="inserisci username" name="username" required />
+
+            <label for="psw"> <b> password</b></label>
+            <input id="passwordInput" type="password" placeholder="inserisci password" name="psw" required />
+
+            <button type="submit"> login</button>
+            <button type="button" onclick="closeForm()"> chiudi</button>
+        </form>
+
+    </div>
+
+    <br /> <br />
+    <footer>
+        <p>
+            &copy;REX hotel
+            <h2> Hotel Rex Lifestyle Napoli </h2>
+            Visita le nostre pagine social
+            <a href="Instagram.html">pagina instagram Hotel</a> |
+            <a href="Facebook.html">pagina facebook Hotel</a>
+        </p>
+    </footer>
+
+
+</body>
+</html>

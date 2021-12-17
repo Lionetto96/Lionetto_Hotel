@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Rex Hotel </title>
+    <link href="Hotel.css" rel="stylesheet" />
+    <script src="Script.js"></script>
+    <link href="lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body onload="checkLoggedUser();welcome2()">
+    <header>
+        <img id="logo" src="RexLogo.jpg" width="100" height="100" />
+        <h1> Hotel Rex Lifestyle Napoli </h1>
+
+        <marquee>Alla scoperta di Napoli</marquee>
+    </header>
+
+
+
+
+
+    <nav>
+        <ul>
+            <li><a href="Homepage.html">Homepage</a> </li>
+            <li><a href="Contatti.html">contatti</a> </li>
+            <li> <a href="Camere.html">le  nostre camere</a></li>
+            <li><button id="logOutButton" onclick="logOut()">Esci</button></li>
+        </ul>
+
+
+    </nav>
+
+    <main class="container">
+
+        <img id="hotel" src="imageHotel.jpg" />
+
+        <div class="presentazione">
+            <img id="pres" src="image2.jpeg" />
+
+            <p>
+                DESCRIZIONE HOTEL
+            </p>
+        </div>
+
+
+        <button id="openLoginForm" onclick="login()">Accedi</button>
+        <div id="myForm">
+            <form onsubmit="save()">
+                <h1> Login</h1>
+
+                <label for="username"> <b> username</b></label>
+                <input id="usernameInput" type="text" placeholder="inserisci username" name="username" required />
+
+                <label for="psw"> <b> password</b></label>
+                <input id="passwordInput" type="password" placeholder="inserisci password" name="psw" required />
+
+                <button type="submit"> login</button>
+                <button type="button" onclick="closeForm()"> chiudi</button>
+
+
+            </form>
+
+        </div>
+        
+    </main>
+    <footer>
+        <p>
+
+            &copy;REX hotel
+            <h2> Hotel Rex Lifestyle Napoli </h2>
+            Visita le nostre pagine social
+            <a target="_blank" href="Instagram.html">pagina instagram Hotel</a> |
+            <a target="_blank" href="Facebook.html">pagina facebook Hotel</a>
+        </p>
+    </footer>
+
+
+
+</body>
+</html>
+
+<!--Sito web di un Hotel
+
+Pagine da fare:
+- Homepage
+- Camere
+- Contatti
+- Prenota
+
+TUTTE le pagine devono avere in alto il logo e il nome dell'hotel.
+
+Sotto deve esserci una barra di navigazione con i link alle pagine (TRANNE Prenota).
+
+In fondo, si ha un footer con il nome dell'Hotel e i link dei social network
+che portano alle pagine social dell'hotel (finte).
+
+- Homepage
+Deve contenere un'immagine dell'hotel
+
+Sotto, deve esserci un paragrafo con descrizione dell'hotel e un'altra immagine.
+
+- Camere
+Deve contenere un 'elenco' con le camere, con le seguenti informazioni:
+- nome della stanza,
+- numero di posti letto
+- foto della stanza
+- prezzo per notte
+- pulsante prenota che porta alla pagina prenota
+
+- Contatti
+inserire contatto email, indirizzo, numero di telefono
+(altre aggiunte: area di testo per richiedere informazioni (form -> textarea)...)
+
+- Prenota
+Deve contenere una form in cui l'utente può inserire:
+nome, cognome, email, numero di telefono, data di check-in e di check-out.
+Utilizzare un pò di controlli delle form (data type...).
+Tutti i campi sono obbligatori.
+Ricorda: inserire un campo per sottomettere la form-->
+<!--CSS:
+1) Affiancare il logo al titolo della pagina dell'hotel.
+
+2) Barra di navigazione
+- Renderla ORIZZONTALE (se non lo è già).
+- Stilizzare la barra di navigazione cambiando il colore dei link,
+generando un cambiamento di colore del testo del link o del background
+o entrambi al passaggio del mouse sopra l'elemento.
+- Fare in modo che il colore del link non cambi quando è stato visitato.
+
+3) La prima immagine nella Homepage deve occupare tutta la larghezza della pagina.
+Affiancare il paragrafo di descrizione dell'hotel alla seconda immagine.
+
+4) Fare in modo che, passando sulla descrizione di una camera, venga evidenziata
+con un colore diverso.
+
+5) Inserire un pulsante arrotondato per inviare i dati (submit) nella form di prenotazione.
+
+6) Media queries:
+- rendere la barra di navigazione LATERALE e verticale quando lo schermo diventa minore di 660px
+- fare in modo che la form occupi metà della pagina e l'altra metà è occupata
+da un'immagine. Quando lo schermo diventa piccolo (valutando un punto limite in cui è opportuno)
+far scomparire l'immagine accanto alla form di prenotazione oppure ridistribuire il layout
+in modo che l'immagine si sposti in basso rispetto alla form.-->
+<!--Javascript
+- Al caricamento della pagina Home, viene mostrato il messaggio di benvenuto.
+Se l'utente è 'loggato' -> Benvenuto NOME!
+Altrimenti -> Benvenuto!
+
+- Inserire in basso un pulsante 'Accedi' che, se cliccato, fa comparire una popup di login
+(username e password e tasto login) e un tasto chiudi (se cliccato, si nasconde
+la popup e si rivede il tasto 'Accedi')-->
+<!--- L'utente compila i campi. Cliccando login, vengono salvati i dati sul local storage,
+la casella che contiene form e tasto chiudi scompare e il tasto 'Accedi' è disabilitato.
+(N.B. Esiste l'attributo disabled)
+
+- L'utente può fare login in TUTTE le pagine.
+
+- Ricaricando la pagina o andando in una delle altre pagine, se l'utente è loggato non
+deve essere possibile, quindi, fare login (ovvero tasto Accedi disabilitato)-->
+<!--- Nella barra di navigazione, quando l'utente è loggato, compare un tasto
+'Esci' per fare logout, che fa tornare possibile il login (quindi tasto accedi disabilitato)
+e svuota lo storage.
+
+- Alla scelta della camera da prenotare, salvare un' informazione sulla stanza
+ (esempio: Nome della stanza, prezzo) da poter recuperare allo step successivo e mostrare
+all'utente nella pagina di prenotazione.
+Esempio: hai scelto camera XXX - XXX euro
+
+- Settare la data minima di prenotazione a oggi-->

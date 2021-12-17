@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> Rex hotel/Contatti</title>
+    <link href="Hotel.css" rel="stylesheet" />
+    <script src="Script.js"></script>
+    <link href="lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="checkLoggedUser()">
+    <header>
+        <img id="logo" src="RexLogo.jpg" width="100" height="100" />
+        <h1> Hotel Rex Lifestyle Napoli </h1>
+        <img src="imageHotel.jpg" />
+
+    </header>
+
+
+    <nav>
+        <ul>
+            <li><a href="Homepage.html">Homepage</a> </li>
+            <li><a href="Contatti.html">contatti</a> </li>
+            <li> <a href="Camere.html">le  nostre camere</a></li>
+            <li><button id="logOutButton" onclick="logOut()">Esci</button></li>
+        </ul>
+
+
+    </nav>
+    <p>
+        <div class="contatti">
+            email: rexHotel@hotelLifestyleNapoli.it
+            <br />  <br />
+            indirizzo: via armando Diaz, 23
+            <br />  <br />
+            numero telefonico: 0834 374457
+        </div>
+    </p>
+
+    <button id="openLoginForm" onclick="login()">Accedi</button>
+    <div id="myForm">
+        <form onsubmit="save()">
+            <h1> Login</h1>
+
+            <label for="username"> <b> username</b></label>
+            <input id="usernameInput" type="text" placeholder="inserisci username" name="username" required />
+
+            <label for="psw"> <b> password</b></label>
+            <input id="passwordInput" type="password" placeholder="inserisci password" name="psw" required />
+
+            <button type="submit"> login</button>
+            <button type="button" onclick="closeForm()"> chiudi</button>
+        </form>
+
+    </div>
+    <footer>
+        <p>
+            &copy;REX hotel
+            <br /> <br />
+            <textarea rows="5" cols="50">Scrivici</textarea>
+            <br /> <br />
+
+            <input class="button" value="Invia" type="submit">
+            <br />  <br />
+            <h2> Hotel Rex Lifestyle Napoli </h2>
+            Visita le nostre pagine social
+            <a href="Instagram.html">pagina instagram Hotel</a> |
+            <a href="Facebook.html">pagina facebook Hotel</a>
+        </p>
+    </footer>
+
+</body>
+</html>
